@@ -5,7 +5,7 @@ It aims to modernize academic evaluation by saving time for faculty and giving s
 
 ---
 
-## Vision & Real-World Use Case
+## Real-World Use Case
 
 **Best real-life use case:**  
 Xaminai can be integrated into **University and College Portals**, allowing students and faculty to access AI-powered grading and feedback seamlessly within existing academic systems.
