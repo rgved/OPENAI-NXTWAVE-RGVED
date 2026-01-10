@@ -3,3 +3,10 @@ uvicorn
 python-dotenv
 google-generativeai
 pydantic
+fastapi
+uvicorn[standard]
+python-multipart
+google-api-python-client
+python-docx
+PyMuPDF
+python-dotenv
