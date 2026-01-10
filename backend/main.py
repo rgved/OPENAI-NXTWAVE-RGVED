@@ -2,7 +2,7 @@
 from fastapi import FastAPI, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from grader import grade_answer, companion_feedback
+from backend.grader import grade_answer, companion_feedback
 import docx
 import fitz
 from io import BytesIO
@@ -403,7 +403,7 @@ def download_drive_file(file_id: str):
     return filename, mime_type, buffer.read()
 
 from fastapi import Query
-from grader import grade_answer
+from backend.grader import grade_answer
 
 
 from fastapi import Query
@@ -539,7 +539,7 @@ def grade_from_drive(
 
 
 from fastapi import UploadFile, File
-from grader import grade_from_image
+from backend.grader import grade_from_image
 
 
 @app.post("/grade/image")
@@ -574,7 +574,7 @@ async def grade_image(
     return graded
 
 from fastapi import UploadFile, File
-from grader import companion_from_image
+from backend.grader import companion_from_image
 
 @app.post("/companion/image")
 async def companion_image(file: UploadFile = File(...)):
@@ -676,12 +676,12 @@ def companion_from_drive(file_id: str):
 #DASHBOARD DATABASE
 
 from fastapi import Query
-from database import SessionLocal
-from models import GradingHistory
+from backend.database import SessionLocal
+from backend.models import GradingHistory
 
 from fastapi import Query
-from database import SessionLocal
-from models import GradingHistory
+from backend.database import SessionLocal
+from backend.models import GradingHistory
 
 
 
