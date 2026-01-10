@@ -11,7 +11,7 @@ from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 from io import BytesIO
 from PIL import Image
-import pytesseract
+# import pytesseract
 import cv2
 import numpy as np
 
