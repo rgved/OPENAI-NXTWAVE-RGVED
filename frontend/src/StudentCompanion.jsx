@@ -119,7 +119,7 @@ export default function StudentCompanion() {
 
   return (
     <div className="container">
-      <h1>🤝 Student Companion</h1>
+      <h1>Student Companion</h1>
 
       {/* MODE TABS */}
       <div className="tabs">

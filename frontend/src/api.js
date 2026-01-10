@@ -117,3 +117,21 @@ export async function getCompanionFromDrive(fileId) {
 
   return res.json();
 }
+
+
+
+// DASHBOARD
+
+export async function fetchDashboardHistory(mode = "") {
+  const url = mode
+    ? `${BASE_URL}/dashboard/history?mode=${mode}`
+    : `${BASE_URL}/dashboard/history`;
+
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch history");
+  }
+
+  return res.json();
+}

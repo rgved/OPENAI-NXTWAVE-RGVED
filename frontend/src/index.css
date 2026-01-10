@@ -268,7 +268,7 @@ margin-bottom: 20px;
 border-radius: 14px;
 background: rgba(255, 255, 255, 0.04);
 border: 1px solid rgba(255, 255, 255, 0.18);
-color: #e5e7eb;
+color: #0b7e05;
 font-size: 0.95rem;
 appearance: none;
 cursor: pointer;
@@ -314,4 +314,18 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 -webkit-appearance: none;
 margin: 0;
+}
+.security-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.security-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e5e7eb;
 }

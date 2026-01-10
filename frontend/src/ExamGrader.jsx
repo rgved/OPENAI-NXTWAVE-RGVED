@@ -4,6 +4,7 @@ import { jsPDF } from "jspdf";
 
 
 
+
 export default function ExamGrader() {
   const [mode, setMode] = useState("text"); // text | file
 
@@ -97,8 +98,8 @@ export default function ExamGrader() {
   
     doc.setFontSize(11);
     doc.text("Sr No: 1", 20, 70);
-    doc.text(`Question: ${question || "Submitted question"}`, 20, 78, { maxWidth: 170 });
-    doc.text(`Answer: ${studentAnswer || file?.name || "Submitted answer"}`, 20, 95, { maxWidth: 170 });
+    doc.text(`Question: ${result.question || "Submitted question"}`, 20, 78, { maxWidth: 170 });
+    doc.text(`Answer: ${result.answer || file?.name || "Submitted answer"}`, 20, 95, { maxWidth: 170 });
     doc.text(`Marks Awarded: ${result.score} / ${maxScore}`, 20, 112);
   
     doc.line(20, 120, 190, 120);
@@ -211,14 +212,24 @@ export default function ExamGrader() {
     }
   };
 
-  const detectedQA = detectQuestionAnswer(
-    question || studentAnswer || result?.feedback || ""
-  );
+  const detectedQA =
+  result
+    ? {
+        question: result.question || question || "—",
+        answer: result.student_answer || studentAnswer || "—"
+      }
+    : {
+        question: question || "—",
+        answer: studentAnswer || "—"
+      };
+
+
+  
   
 
   return (
     <div className="container">
-      <h1>📚 Exam Grader</h1>
+      <h1>Exam Grader</h1>
 
       {/* MODE TABS */}
       <div className="tabs">
@@ -265,6 +276,7 @@ export default function ExamGrader() {
           />
         </>
       )}
+
 
       {/* FILE MODE */}
       {mode === "file" && (
@@ -349,12 +361,14 @@ export default function ExamGrader() {
   <table className="summary-table">
     <tbody>
       <tr>
-        <td><b>Detected Question</b></td>
-        <td>{detectedQA.question}</td>
+        <td><b>Detected Question: </b></td>
+        <td>{result.question || detectedQA.question}</td>
+
+
       </tr>
 
       <tr>
-        <td><b>Detected Answer</b></td>
+      <td><b>Detected Answer</b></td>
         <td>{detectedQA.answer}</td>
       </tr>
 
@@ -407,6 +421,10 @@ export default function ExamGrader() {
 >
   📥 Download PDF
 </button>
+<button onClick={() => window.location.href = "/dashboard"}>
+  📊 View Dashboard
+</button>
+
 
 
   </>
