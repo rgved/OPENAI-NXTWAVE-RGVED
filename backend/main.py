@@ -353,9 +353,19 @@ async def companion_file(file: UploadFile = File(...)):
 SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 SERVICE_ACCOUNT_FILE = "service_account.json"
 
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_FILE, scopes=SCOPES
+import os
+import json
+from google.oauth2 import service_account
+
+service_account_info = json.loads(
+    os.environ["GOOGLE_SERVICE_ACCOUNT_JSON"]
 )
+
+credentials = service_account.Credentials.from_service_account_info(
+    service_account_info,
+    scopes=SCOPES
+)
+
 
 drive_service = build("drive", "v3", credentials=credentials)
 
