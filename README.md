@@ -169,8 +169,6 @@ Instead of grading harshly, Companion Mode focuses on learning:
 
 ## Future Scope
 
-- **WhatsApp-based Student Companion**
-  - Chat-based doubt solving and feedback
 
 - **Fully Local Fine-Tuned LLM**
   - Reduced dependency on external APIs
