@@ -195,6 +195,6 @@ Xaminai is not just an AI grader —
 it is a **time-saving academic assistant for faculty** and a **clarity-providing learning companion for students**, designed with real-world university workflows in mind.
 
 ---
-## 📐 System Architecture
+## System Architecture
 
 ![XaminAI Architecture](docs/architecture.png)
