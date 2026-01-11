@@ -83,7 +83,7 @@ Students often struggle with questions like:
 ### Deployment
 - **Frontend** : Vercel
 - **Backend** : Render
-- **PLEASE NOTE** Render and Vercel mighttake 5 minuites to Start and Run
+- **PLEASE NOTE** Render and Vercel might take 5 minuites to Start and Run
 ---
 
 ## Key Features
