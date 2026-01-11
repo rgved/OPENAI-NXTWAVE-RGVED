@@ -80,6 +80,10 @@ Students often struggle with questions like:
 - **PDF / DOCX parsing**
 - **Image-based evaluation using Gemini Vision**
 
+### Deployment
+- **Frontend** : Vercel
+- **Backend** : Render
+- **PLEASE NOTE** Render and Vercel mighttake 5 minuites to Start and Run
 ---
 
 ## Key Features
